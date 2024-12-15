@@ -1,11 +1,14 @@
 import React from 'react';
+import { auth } from '../firebase/firebase-config';
 
 const Dashboard = () => {
+  const user = auth.currentUser;
+
   return (
-    <div>
-      <h2>Your Time Capsule Dashboard</h2>
-      {/* Add functionality for users to write and view letters */}
-    </div>
+    <header>
+      <h1>Welcome, {user?.displayName || user?.email || 'Not Log'}!</h1>
+      <button onClick={() => auth.signOut()}>Logout</button>
+    </header>
   );
 };
 
