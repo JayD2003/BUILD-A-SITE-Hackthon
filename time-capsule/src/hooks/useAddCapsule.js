@@ -16,8 +16,8 @@ export const useAddCapsule = () => {
   const [success, setSuccess] = useState(false);
 
   // Function to add capsule to Firestore
-  const addCapsule = async ({ title, message, deliveryDate }) => {
-    if (!title.trim() || !message.trim() || !deliveryDate) {
+  const addCapsule = async ({ fromName, toName, toEmail, title, message, scheduledTime }) => {
+    if (!title.trim() || !message.trim() || !scheduledTime) {
       setError('Please fill in all fields.');
       return;
     }
@@ -29,9 +29,12 @@ export const useAddCapsule = () => {
     try {
       await addDoc(CapsuleCollectionRef, {
         userID,
-        title,
-        message,
-        deliveryDate,
+        fromName, 
+        toName, 
+        toEmail, 
+        title, 
+        message, 
+        scheduledTime,
         createdAt: serverTimestamp(),
       });
 
