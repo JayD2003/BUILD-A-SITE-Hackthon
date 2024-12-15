@@ -18,6 +18,7 @@ const Signup = () => {
       const authInfo = {
         userID: userCredential.user.uid,
         name : userCredential.user.displayName,
+        gmail: userCredential.user.email,
         profilePhoto: userCredential.user.photoURL,
         isAuth: true,
       }
@@ -40,6 +41,7 @@ const Signup = () => {
           const authInfo = {
               userID: results.user.uid,
               name : results.user.displayName,
+              gmail: results.user.email,
               profilePhoto: results.user.photoURL,
               isAuth: true,
           }

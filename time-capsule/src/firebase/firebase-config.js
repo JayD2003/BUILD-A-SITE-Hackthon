@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { browserLocalPersistence, setPersistence } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,11 +20,15 @@ const firebaseConfig = {
   measurementId: "G-00GFSH1LCK"
 };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // to get authorization for app
 const auth = getAuth(app);
 //to get google auth for app
+setPersistence(auth, browserLocalPersistence).catch((error) => {
+  console.error("Error setting auth persistence:", error);
+});
 const provider = new GoogleAuthProvider();
 //to get database for app
 const db = getFirestore(app);

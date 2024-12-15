@@ -23,6 +23,7 @@ const Login = () => {
         const authInfo = {
             userID: results.user.uid,
             name : results.user.displayName,
+            gmail: results.user.email,
             profilePhoto: results.user.photoURL,
             isAuth: true,
         }
@@ -47,6 +48,7 @@ const Login = () => {
       const authInfo = {
         userID: userCredential.user.uid,
         name : userCredential.user.displayName,
+        gmail: userCredential.user.email,
         profilePhoto: userCredential.user.photoURL,
         isAuth: true,
       }
