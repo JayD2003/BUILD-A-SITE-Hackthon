@@ -1,0 +1,153 @@
+/* Dashboard.css */
+/* Styling for the header */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/* Background & Container */
+.dashboard-container {
+    margin-top: 60px;
+    background: linear-gradient(135deg,#f8bbd0, #e0f7fa );
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+  }
+  
+  /* Header Section */
+  .dashboard-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Dashboard Content */
+  .dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    width: 30%; /* 2/5 of the width */
+    height: max-content;
+    background-color: #f5f5dc;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .profile-photo img {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+  }
+  
+  .default-photo {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+  }
+  
+  .profile-details p {
+    font-size: 19px;
+    color: #555;
+  }
+  
+  .profile-details strong {
+    color: #333;
+  }
+  
+  /* Time Capsule Section */
+  .capsules-section {
+    width: 55%;
+    background-color:#f5f5dc;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .capsules-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    font-family: 'Playfair Display', serif;    
+    background-color: #ff758c;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    width: 200px;
+    margin: 20px auto 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background-color: #ff7eb3;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .dashboard-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .profile-section,
+    .capsules-section {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  
+    .profile-photo img {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .profile-details p {
+      font-size: 14px;
+    }
+  
+    .logout-btn {
+      width: 100%;
+    }
+  }
+  

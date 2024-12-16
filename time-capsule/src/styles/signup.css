@@ -1,0 +1,118 @@
+/* SignUp.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+.signup-container {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #e0f7fa, #f8bbd0); /* Light gradient background */
+  }
+  
+  .signup-box {
+    background: #fff;
+    padding: 20px 40px 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .signup-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: #00897b;
+  }
+  
+  .btn {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 12px;
+    background: #00897b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: #00695c;
+  }
+  
+  .or-divider {
+    margin: 10px 0;
+    font-size: medium;
+    font-weight: bold;
+    color: #777;
+  }
+  
+  .or-divider span {
+    background: #fff;
+    padding: 0 10px;
+  }
+  
+  .google-btn {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 12px;
+    background: #4285F4; /* Google blue */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .google-btn:hover {
+    background: #357ae8; /* Google blue hover */
+  }
+  
+  .login-link {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .login-link a {
+    color: #00897b;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  

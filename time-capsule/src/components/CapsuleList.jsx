@@ -1,5 +1,6 @@
 import React from "react";
 import { useGetCapsules } from "../hooks/useGetCapsule";
+import './../styles/capsule.css';
 
 const CapsulesList = () => {
   const { capsules, loading, error } = useGetCapsules();
@@ -17,9 +18,9 @@ const CapsulesList = () => {
         <ul>
           {capsules.map((capsule) => (
             <li key={capsule.id} className="capsule-item">
-              <h3>{capsule.title}</h3>
+              <h3>Title : {capsule.title}</h3>
               <p>{capsule.message}</p>
-              <small>Delivery Date: {new Date(capsule.deliveryDate).toLocaleDateString()}</small>
+              <small>Delivery Date: {new Date(capsule.scheduledTime).toLocaleDateString()}</small>
             </li>
           ))}
         </ul>

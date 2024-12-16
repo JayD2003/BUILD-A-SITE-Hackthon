@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAddCapsule } from '../hooks/useAddCapsule';
 import emailjs from 'emailjs-com';
-
+import './../styles/createcapsule.css';  // Link the new CSS file
 
 const CreateCapsule = () => {
   const [fromName, setFromName] = useState('');  // Sender's name
@@ -12,18 +12,15 @@ const CreateCapsule = () => {
   const [deliveryDate, setDeliveryDate] = useState('');
   const [deliveryTime, setDeliveryTime] = useState('');
   const { addCapsule, loading, error, success } = useAddCapsule();
-  const status = 'pending';
 
-    // EmailJS setup
-    const userID = "Qif3KOpvOnQGd87pn"; // Replace with your EmailJS public key
-    const serviceID = "service_uzccmxn"; // Your EmailJS Service ID
-    const templateID = "template_cu0xfmz"; // Your EmailJS Template ID
-  
+  // EmailJS setup
+  const userID = "Qif3KOpvOnQGd87pn"; // Replace with your EmailJS public key
+  const serviceID = "service_uzccmxn"; // Your EmailJS Service ID
+  const templateID = "template_cu0xfmz"; // Your EmailJS Template ID
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const scheduledTime = `${deliveryDate}T${deliveryTime}:00`;  // Combine date and time
-
 
     const emailData = {
       from_name: fromName,  // Sender's name
@@ -42,15 +39,15 @@ const CreateCapsule = () => {
         console.error('Error sending email:', error);
       });
 
-
     await addCapsule({ fromName, toName, toEmail, title, message, scheduledTime });
   };
 
   return (
-    <div>
-      <h2>Create Time Capsule</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="create-capsule">
+      <h2 className="create-capsule-title">Create Time Capsule</h2>
+      <form className="create-capsule-form" onSubmit={handleSubmit}>
         <input
+          className="capsule-input"
           type="text"
           value={fromName}
           onChange={(e) => setFromName(e.target.value)}
@@ -58,6 +55,7 @@ const CreateCapsule = () => {
           required
         />
         <input
+          className="capsule-input"
           type="text"
           value={toName}
           onChange={(e) => setToName(e.target.value)}
@@ -65,6 +63,7 @@ const CreateCapsule = () => {
           required
         />
         <input
+          className="capsule-input"
           type="email"
           value={toEmail}
           onChange={(e) => setToEmail(e.target.value)}
@@ -72,6 +71,7 @@ const CreateCapsule = () => {
           required
         />
         <input
+          className="capsule-input"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -79,30 +79,35 @@ const CreateCapsule = () => {
           required
         />
         <textarea
+          className="capsule-input"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Message"
           required
         />
-        <input
-          type="date"
-          value={deliveryDate}
-          onChange={(e) => setDeliveryDate(e.target.value)}
-          required
-        />
-        <input
-          type="time"
-          value={deliveryTime}
-          onChange={(e) => setDeliveryTime(e.target.value)}
-          required
-        />
-        <button type="submit" disabled={loading}>
+        <div className="capsule-date-time">
+          <input
+            className="capsule-input"
+            type="date"
+            value={deliveryDate}
+            onChange={(e) => setDeliveryDate(e.target.value)}
+            required
+          />
+          <input
+            className="capsule-input"
+            type="time"
+            value={deliveryTime}
+            onChange={(e) => setDeliveryTime(e.target.value)}
+            required
+          />
+        </div>
+        <button className="capsule-button" type="submit" disabled={loading}>
           {loading ? 'Creating...' : 'Create Capsule'}
         </button>
       </form>
 
-      {error && <p>{error}</p>}
-      {success && <p>Capsule created successfully!</p>}
+      {error && <p className="capsule-error">{error}</p>}
+      {success && <p className="capsule-success">Capsule created successfully!</p>}
     </div>
   );
 };
