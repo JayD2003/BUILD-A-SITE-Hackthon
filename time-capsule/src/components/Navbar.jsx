@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <header  className="header">
-      <h1>TimePensieve</h1>
+      <h1><Link to="/">TimePensieve</Link></h1>
       <nav>
         <ul>
           {/* For unauthenticated users */}
