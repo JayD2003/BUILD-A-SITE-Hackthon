@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, provider} from './../firebase/firebase-config';
 
 const Signup = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -14,10 +15,10 @@ const Signup = () => {
     e.preventDefault();
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log("User registered successfully:", userCredential.user);
+      console.log("User registered successfully:", name);
       const authInfo = {
         userID: userCredential.user.uid,
-        name : userCredential.user.displayName,
+        name : name,
         gmail: userCredential.user.email,
         profilePhoto: userCredential.user.photoURL,
         isAuth: true,
@@ -61,6 +62,13 @@ const Signup = () => {
     <div>
       <h2>Create an Account</h2>
       <form onSubmit={handleSubmit}>
+        <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Your Name"
+            required
+          />
         <input
           type="email"
           placeholder="Email"
