@@ -54,3 +54,41 @@ Create a platform where users can:
     Start the development server:
     ```bash
     npm run dev
+
+## How It Works
+
+### Compose a Letter:
+- Write a letter with a meaningful message.
+- Optionally, attach photos or videos (*enhancement coming soon*).
+
+### Schedule Delivery:
+- Specify a delivery date and time.
+
+### Save the Capsule:
+- The capsule is securely stored in Firebase Firestore.
+
+### Receive the Letter:
+- On the scheduled date, the recipient receives the letter via email.
+
+---
+
+## Future Enhancements
+
+- **Media Attachments**: Add functionality to upload and store photos and videos.
+- **Sentiment Analysis**: Use AI to analyze the sentiment of letters.
+- **Reminder Emails**: Notify users about upcoming capsule deliveries.
+- **Enhanced Capsule Management**: Enable users to view, edit, or delete saved capsules.
+- **Multi-Language Support**: Broaden accessibility for users worldwide.
+
+---
+
+## Acknowledgments
+
+- Inspired by the timeless concept of sending letters to the future.
+- Built with ❤️ during a 48-hour hackathon.
+
+---
+
+## Live Demo
+
+Check out the live demo here: **[TimePensieve](https://time-capsule-45314.web.app/)**
