@@ -42,7 +42,7 @@ Create a platform where users can:
 1. Clone the repository:
    ```bash
    git clone [text](https://github.com/JayD2003/BUILD-A-SITE-Hackthon)
-   cd TimePensieve
+   cd time-capsule
 
 2. Install dependencies:
     ```bash
