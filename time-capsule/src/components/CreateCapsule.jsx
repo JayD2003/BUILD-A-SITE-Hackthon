@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useAddCapsule } from '../hooks/useAddCapsule';
+import emailjs from 'emailjs-com';
+
 
 const CreateCapsule = () => {
   const [fromName, setFromName] = useState('');  // Sender's name
@@ -12,9 +14,35 @@ const CreateCapsule = () => {
   const { addCapsule, loading, error, success } = useAddCapsule();
   const status = 'pending';
 
+    // EmailJS setup
+    const userID = "Qif3KOpvOnQGd87pn"; // Replace with your EmailJS public key
+    const serviceID = "service_uzccmxn"; // Your EmailJS Service ID
+    const templateID = "template_cu0xfmz"; // Your EmailJS Template ID
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const scheduledTime = `${deliveryDate}T${deliveryTime}:00`;  // Combine date and time
+
+
+    const emailData = {
+      from_name: fromName,  // Sender's name
+      to_name: toName,      // Recipient's name
+      to_email: toEmail,    // Recipient's email
+      subject: title,       // Email subject (title of the capsule)
+      message: message,     // The message content
+    };
+
+    // Send the email
+    emailjs.send(serviceID, templateID, emailData, userID)
+      .then((response) => {
+        console.log('Email sent successfully:', response);
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+      });
+
+
     await addCapsule({ fromName, toName, toEmail, title, message, scheduledTime });
   };
 
